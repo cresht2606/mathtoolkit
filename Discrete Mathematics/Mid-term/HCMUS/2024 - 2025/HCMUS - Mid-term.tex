@@ -1,0 +1,68 @@
+\documentclass[a4paper]{exam}
+
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage{vntex}
+
+%Page setup
+\usepackage[letterpaper, top = 1.0in, bottom = 1.0in, left = 1.0in, right = 1.0in, heightrounded]{geometry}
+
+\headrule
+\header{\textbf{Biên soạn: Trần Minh Đức}}{}{\textbf{7/3/2025}}
+
+\begin{document}
+	\begin{center}
+		\fbox{\parbox{5.5in}{\centering
+				\vspace{1mm}
+				HCMUS - TOÁN RỜI RẠC (CNTT) - 13/11/2024\\
+				\vspace{1mm}
+				HỌC KÌ I - NĂM HỌC 2024 - 2025 - THỜI GIAN: 60 PHÚT\\
+				\vspace{1mm}
+			}
+		}
+	\end{center}
+	
+	\vspace*{2mm}
+	
+	\begin{questions}
+		\question (\textbf{3.5 điểm} = 1đ + 1đ + 0.5đ + 1đ). \textbf{Cho các biến mệnh đề p, q, r, s và t.}
+		\begin{itemize}
+			\item Đặt $A = \left[((p \longrightarrow r) \land q) \longrightarrow (p \land q) \right]$ và $B = (\neg p \longrightarrow \neg q)$. Chứng minh $A \longleftrightarrow B$.\\
+			\\Nếu p đúng thì chân trị của A ra sao? (Dùng B để giải thích ngắn gọn).\\
+			\item Xét các suy luận sau:\\
+			\[
+			\begin{array}{c|c}
+				\textbf{Suy luận bên trái} & \textbf{Suy luận bên phải}\\
+				\hline
+				\neg s \land t \quad (1) & r \lor t \quad (6)\\[1mm]
+				p \lor q \quad (2) & \neg p \longrightarrow (q \land s) \quad (7)\\[1mm]
+				q \longrightarrow (r \longrightarrow s) \quad (3) & p \land \neg t \quad (8)\\[1mm]
+				t \longrightarrow q \quad (4) & r \longrightarrow \neg q \quad (9)\\[1mm]
+				\hline
+				\therefore p \quad (5) & \therefore \neg q \longrightarrow s \quad (10)
+			\end{array}
+			\]\\
+			Hãy chứng minh suy luận bên trái là \textit{đúng} và giải thích tại sao suy luận bên phải là \textit{sai}.\\
+			\item Cho $C = "\forall x \in \mathbb{R}, \exists y \in \mathbf{Q}, y = sin(3x)$ hay $y = cos(x)$. Viết mệnh đề phủ định $\neg C$ và xét chân trị của C.\\
+		\end{itemize}
+		\question (\textbf{3 điểm} = 1đ + 2đ)
+		\begin{itemize}
+			\item Cho $ A, B, C, D \subset E$. Chứng minh $\left[A \setminus (B \cup C) \right] \, \cup \, \left[(A \setminus B) \cap D \right] \, = \, \left[(A \setminus B) \setminus (C \cap \neg D)\right]$.\\
+			\\Nếu $D = \emptyset$ thì hãy rút gọn $\left[(A \setminus B) \cap D \right]$ và $(C \cap \neg D)$.\\
+			\item Cho $f: \mathbb{R} \longrightarrow \mathbb{R}$ có $f(x) = e^{-x} - 2e^{x} + 5, \forall x \in \mathbb{R}$, $g: \mathbb{R} \setminus \{0\} \longrightarrow \mathbb{R}$ có $g(x) = 2x^{2} - x^{-2} + 5, \forall x \in \mathbb{R} \setminus \{0\}$ và $h: \mathbb{R} \setminus \{0\} \longrightarrow \mathbb{R}$ thoả $f \circ g = h$.\\
+			\\Chứng minh rằng $f$ là một song ánh và tìm biểu thức của ánh xạ ngược $f^{-1}$.\\
+			\\Tìm biểu thức của $h$ (yêu cầu viết dưới dạng rút gọn).\\
+		\end{itemize}
+		\question (\textbf{3.5 điểm} = 1.5đ + 1đ + 1đ)
+		\begin{itemize}
+			\item Cho $S = {0, 1, 2,..., 8, 9, 10}$. Hỏi $S$ có bao nhiêu tập hợp con?\\
+			\\S có bao nhiêu tập hợp con T thoả $\|T\| = 6$, $minT = 1$ và $8 \leq maxT \leq 9$?\\
+			\item Xếp a, a, a, b, b, b, c, c, c, c thành một dãy ký tự tuỳ ý có 10 ký tự (chẳng hạn dãy \textit{cabcbaacbc},...). Hỏi có tất cả bao nhiêu dãy ký tự như vậy?\\
+			Nếu yêu cầu thêm ký tự đầu của dãy là a và ký tự cuối của dãy phải khác a thì ta có bao nhiêu dãy?\\
+			\item Khi khai triển biểu thức $(2x - 3y^{2} + 4z^{3} - 5t^{4})^{14} $ ta được bao nhiêu đơn thức khác nhau và hệ số đứng trước $x^{8}y^{4}z^{9}t^{4}$ là bao nhiêu?\\ 
+		\end{itemize}
+	\end{questions}
+	\hspace*{0pt}\hfill \textit{\textbf{HẾT}}
+	
+	\pagebreak
+\end{document}
