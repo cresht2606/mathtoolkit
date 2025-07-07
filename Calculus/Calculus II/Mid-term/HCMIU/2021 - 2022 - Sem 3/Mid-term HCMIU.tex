@@ -1,0 +1,227 @@
+\documentclass[a4paper]{exam}
+\usepackage{amsmath, amssymb, siunitx, lastpage}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+%Page setup
+\usepackage[letterpaper, top = 1.0in, bottom = 1.0in, left = 1.0in, right = 1.0in, heightrounded]{geometry}
+
+%Question Format%
+\renewcommand{\questionlabel}{\textbf{Question \thequestion.}}
+
+%Interval Gaps Format%
+\newcommand{\myquad}[1][1]{\hspace*{#1em}\ignorespaces}
+
+
+%Header file%
+\pagestyle{headandfoot}
+\headrule
+\header{\textbf{Calculus I}}{\textbf{International University, Vietnam National University - HCMC}}{\textit{Page \thepage\ of \pageref{LastPage}}}
+
+%Sample Test File%
+
+\begin{document}
+	
+	%Centered Information Box%
+	\begin{center}
+		\fbox{\fbox{\parbox{5.5in}{\centering
+					\vspace{1mm}
+					HCMIU - Calculus I - Mid-term Test\\
+					\vspace{1mm}
+					Semester 3 - Year: 2021 $\backsim$  2022 - Duration : 90 minutes\\
+					\vspace{1mm}
+					Date Modified : Thursday, June $26^{\text{th}}$, 2025
+				}
+		}
+	}
+	\end{center}
+	
+	%Instructions%
+	\vspace*{1mm}
+	\textbf{INSTRUCTIONS:}
+	\begin{itemize}
+		\item Use of calculator is allowed. Each student is allowed one doubled-sized sheet of reference material (size A4 of similar). All other documents and electronic devices are forbidden
+		\item You must explain your answers in detail; no points will be given for the answer alone.
+		\item There are a total of 5 (five) questions. Each one carries 20 points
+	\end{itemize}
+	
+	%Questions%
+	\vspace*{1mm}
+	\begin{questions}
+		\question Find the limit of the following sequences:
+			\begin{equation*}
+				\text{(a) } a_{n} = \frac{\ln{(2n + 1)}}{n}
+				\myquad[4]
+				\text{(b) } a_{n} = \sin{\left(\frac{n\pi}{6n + 1}\right)} 
+			\end{equation*}
+		\question Determine whether the given series is convergent or divergent:
+			\begin{equation*}
+				\text{(a) } \sum_{n = 1}^{\infty} \frac{n\sqrt{n}}{n^{3} + 1}
+				\myquad[4] 
+				\text{(b) } \sum_{n = 2}^{\infty} \frac{1}{n\ln{(n^{2})}}
+			\end{equation*}
+		\question Find the radius of convergence and interval of convergence of the power series
+			\begin{equation*}
+				\sum_{n = 1}^{\infty} \frac{(-1)^{n}(2x - 4)^{n}}{n6^{n}}
+			\end{equation*}
+		\question Do the following requests:\\[1ex]
+			\noindent \text{(a)} Find a nonzero vector orthogonal to the plane through the points $P(1, -1, 0), Q(x_1, y_1, z_1), R(x_2, y_2, z_2)$, and find the area of triangle PQR. \\[1ex]
+		 	\noindent \text{(b)} Find an equation of the plane that passes through the line of intersection of the planes $y - z = 1$ and $x + 2y = 2$, and is perpendicular to the plane $2x + 3y - z = 4$.
+		\question Do the following requests:\\[1ex]
+			\noindent \text{(a) } Find parametric equations for the tangent line to the curve
+				$$ r(t) = \left\langle t^{2}, 2t, e^{t - 1} \right\rangle, \quad 0 \leq t \leq 2$$
+			at the point $(1, 2, 1)$. \\[1ex]
+			\noindent \text{(b) } Find the length of the space curve 
+				$$ r(t) = \left\langle t, t^2, \frac{4t^{3/2}}{3} \right\rangle, \quad 0 \leq t \leq 1 $$
+	\end{questions}
+	\vspace*{2mm}
+	\begin{center}
+		\textit{\large{END}}
+	\end{center}
+	
+	\newpage
+	
+	\begin{center}
+		\textbf{SUGGESTED ANSWER}
+	\end{center}
+	
+	\noindent \textbf{Question 1.}\\ 
+	
+	\noindent a) We know that the sequence has the type of $\left(\frac{\infty}{\infty}\right)$, thus apply L'hospital rule by deriving the denominator and numenator. \\
+	
+	\begin{equation*}
+		\boxed{a_{n} = \frac{\ln{\left(2n + 1\right)}}{n}} \hspace{0.5em} \Longrightarrow \hspace{0.5em} \lim_{n \to \infty} a_{n} = \lim_{n \to \infty} \frac{\ln{\left(2n + 1\right)}}{n} \left(\frac{\infty}{\infty}\right) = \lim_{n \to \infty} \frac{2}{2n + 1} = 0
+	\end{equation*}
+	
+	\noindent b) 
+	
+	\begin{equation*}
+		\boxed{a_{n} = \sin{\left(\frac{n\pi}{6n + 1}\right)}} \Longrightarrow \lim_{n \to \infty} a_{n} = \lim_{n \to \infty} \sin{\left(\frac{n\pi}{6n + 1}\right)} = \lim_{n \to \infty} \sin{\left(\frac{\pi}{6 + \frac{1}{n}}\right)} = \sin{\left(\frac{\pi}{6}\right)}
+	\end{equation*}\\[0.5ex]
+	
+	\noindent \textbf{Question 2.} There are seven commonly used tests for series, it is advisable to have initial inspection on divergence by finding the limit, since the limit of summation (a) \& (b) are 0, no information is gained from the nth term test. Therefore, go on the process by finding the valid patterns. \\[0.5ex]
+	
+	\noindent Summation (a) have identical form of p-series except the denominator is added by 1, apparently we can use Direct Comparison test with $a_{n} = \frac{n\sqrt{n}}{n^{3} + 1}$ 
+	
+	\begin{equation*}
+		a_{n} = \frac{n\sqrt{n}}{n^{3} + 1} \le \frac{n\sqrt{n}}{n^{3}} = b_{n} \hspace{0.5em} \Longrightarrow \hspace{0.5em} \sum_{n = 1}^{\infty} b_{n} = \sum_{n = 1}^{\infty} \frac{1}{n^{\frac{3}{2}}} \hspace{0.5em} \left(\sum_{n = 1}^{\infty} \frac{1}{n^{p}}\right) 
+	\end{equation*}
+	
+	\vspace*{1mm}
+	
+	\noindent \textbf{Implication:} The series above is convergent p-series with $p = \frac{3}{2} > 1$.\\[0.5ex]
+	
+	\noindent Summation (b) can be solved by integral test as evident by signs of substitution rule with $u = \ln(n) \Longrightarrow du = \frac{1}{n} \, dn$. \\[1ex]
+	
+	\noindent To use this test, let the function be $f(x) = \frac{1}{x \ln(x^2)} = \frac{1}{2x \ln(x)} \Longrightarrow f'(x) = \frac{\ln(x) - 1}{2x^2 \ln(x)^2} \forall x \in (e, \infty)$. This can inferred that the series is positive, continuous and decreasing. Now we can apply the Integral test.
+	
+	\begin{equation*}
+		\lim_{t \to \infty} \int_{2}^{t} \frac{1}{x \ln(x)} \, dx 
+		\hspace{0.5em} = \hspace{0.5em} \frac{1}{2} \lim_{t \to \infty} \int_{\ln 2}^{\ln t} \frac{1}{u} \, du 
+		\hspace{0.5em} = \hspace{0.5em} \lim_{t \to \infty} \frac{1}{2} \left[ \ln(\ln t) - \ln(\ln 2) \right] = \hspace{0.5em} \infty
+	\end{equation*}\\[0.5ex]
+	\noindent \textbf{Question 3.} In order to determine the remainder of the x's for which we will get convergence, any of series tests can be applied. Having said that, ratio test is the best method in this case as most power series comprise nth power term as well as n factorials. \\
+	
+	\noindent After the application of selected test, we arrive at the radius of convergence and the interval by taking out absolute notation, which are also known as endpoints. However, both of endpoints are not assured to be convergent, so for certainty we need to plug in each of them into the series and perform conventional approach likewise.
+	\begin{align*}
+		\sum_{n = 1}^{\infty} \frac{(-1)^{n}(2x - 4)^{n}}{n6^{n}} 
+		&\Longrightarrow 
+		\lim_{n \to \infty} \left| \frac{a_{n + 1}}{a_{n}} \right| \\
+		&= \lim_{n \to \infty} \left| \frac{(-1)^{n + 1} (2x - 4)^{n + 1}}{(n + 1) 6^{n + 1}} 
+		\cdot \frac{n 6^{n}}{(-1)^{n}(2x - 4)^{n}} \right| \\
+		&= \lim_{n \to \infty} \left| \frac{2x - 4}{6} \cdot \frac{n}{n + 1} \right| 
+		= \frac{1}{6} \left| 2x - 4 \right| < 1 \\
+		&\Longrightarrow -6 < 2x - 4 < 6 \Longleftrightarrow \hspace{0.5em} -1 < x < 5 \hspace{0.5em} (R = 6)
+	\end{align*}
+	
+	\textbf{Endpoints: }
+	
+	\begin{itemize}
+		\item x = -1 $\Longrightarrow \hspace{0.5em} \sum_{n = 1}^{\infty} \frac{1}{n}$ (Harmonic Series) $\Longrightarrow$ Diverges
+		\item x = 5 $\Longrightarrow \hspace{0.5em} \sum_{n = 1}^{\infty} \frac{(-1)^{n}}{n}$ (Alternating Harmonic Series) $\Longrightarrow$ Absolutely Converges (This is done by taking the limit of $b_{n} = \frac{1}{n}$)
+	\end{itemize}
+	
+	\vspace*{1mm}
+	
+	\noindent Hence, the interval of convergence for the series is $\left(-1, 5\right]$ \\[0.5ex]
+	
+	\noindent \textbf{Question 4.} \\[0.5em]	
+	(a) If the plane consists of three points P, Q, R, each of points 2 is constructed into vectors PQ, PR. Using the Right Hand rule (i.e. cross product) which gives us a vector perpendicular to the plane spanned by vectors PQ \& PR.
+	
+	$$ 
+	\vec{PQ} = \left\langle 1, 2, 2 \right\rangle \hspace*{0.5em} \& \hspace*{0.5em} \vec{PR} = \left\langle 2, 3, -2 \right\rangle \hspace*{0.5em} \Longrightarrow \hspace*{0.5em} \vec{n} = \vec{PQ} \times \vec{PR} = \begin{vmatrix} 
+		\mathbf{i} & \mathbf{j} & \mathbf{k} \\ 
+		1 & 2 & 2 \\ 
+		2 & 3 & -2 
+	\end{vmatrix} = \left\langle -10, 4, -1 \right\rangle
+	$$\\[0.5em] 
+	\noindent Area of a triangle formed by vectors PQ and PR is equivalent to one-half area of parallelogram.
+	
+	$$ A = \frac{1}{2} \cdot \|\vec{PQ} \times \vec{PR}\| = \frac{1}{2} \cdot \sqrt{10^{2} + 4^{2} + 1} = \frac{3\sqrt{12}}{2} $$
+	
+	\vspace*{1mm}
+	
+	\noindent (b) We are given the intersection line of two planes $(P_{1}) : y - z = 1 \hspace*{0.5em} \& \hspace*{0.5em} (P_{2}) : x + 2y = 2$. To find an intersection point, set one of the coordinates in the equations of both planes to zero and solve the system of equations you end up with, in this case we will set $z = 0$ as one of the variables is free.
+	
+	$$
+	\begin{cases} 
+		y - z = 1 \\ 
+		x + 2y = 2 \\ 
+		z = 0 
+	\end{cases} \Longrightarrow \begin{cases}
+	z = 0\\
+	y = 1\\
+	x = 0
+	\end{cases} \Longrightarrow \hspace*{0.5em} P(0, 1, 0)$$
+	
+	\noindent Additionally the plane is also perpendicular to another plane $(P_{3}) : 2x + 3y - z = 4$, resulting in the cross product of normal vectors from $(P_{1}), (P_{2}), (P_{3})$, also known as the normal vector of desired plane combining with the newly intersection point P. To simplify the process , we can apply cross product on $n_{1}, n_{2}$, then $n_{3}$
+	
+	$$ 
+	\vec{n_{\prime}} = n_{1} \times n_{2} = \begin{vmatrix} 
+		\mathbf{i} & \mathbf{j} & \mathbf{k} \\ 
+		0 & 1 & -1 \\ 
+		1 & 2 & 0 
+	\end{vmatrix} = \left\langle 2, -1, -1 \right\rangle  
+	\hspace*{0.5em} \Longrightarrow \hspace*{0.5em} \vec{n} = n_{\prime} \times n_{3} = \begin{vmatrix} 
+		\mathbf{i} & \mathbf{j} & \mathbf{k} \\ 
+		2 & -1 & -1 \\ 
+		2 & 3 & -1 
+	\end{vmatrix} = \left\langle 4, 0, 8 \right\rangle = \left\langle 1, 0, 2 \right\rangle
+	$$
+	$$\begin{cases}
+		P(0, 1, 0) \\
+		\vec{n} = \left\langle 1, 0, 2 \right\rangle
+	\end{cases} \Longrightarrow (P) : x + 2z = 0$$
+ 	
+	\noindent \textbf{Question 5.} \\[0.5em]
+	\noindent (a) We are told to find the tangent line to the curve under parametric equations and given the vector function which can be done by finding the direction vector. \\[0.25em]
+	
+	\noindent \textbf{Remark:} A direction for the tangent line to the parametric curve $(x, y, z) = (f(t), g(t), h(t))$ at the point $t = t_{0}$ is given by $\left\langle f^{\prime}(t_{0}), g^{\prime}(t_{0}), h^{\prime}(t_{0}) \right\rangle$ \\[0.25em]
+	
+	\noindent Now plug in the initial point (1, 2, 1) and perform derivation
+	
+	$$r^{\prime}(t_{P}) = \left\langle 2 \cdot 1, 2, e^{1 - 1} \right\rangle = \left\langle 2, 2, 1 \right\rangle = \left\langle a, b, c \right\rangle 
+	\hspace*{0.5em} \Longrightarrow \hspace*{0.5em} L : \begin{cases}
+		x = x_{0} + at \\
+		y = y_{0} + bt \\
+		z = z_{0} + ct
+	\end{cases} \Longleftrightarrow \begin{cases}
+	x = 1 + 2t \\
+	y = 2 + 2t \\
+	z = 1 + t \\
+	\end{cases}
+	$$
+	\noindent (b) Arc length along a space curve:
+	\[
+	L = \int_{a}^{b} \sqrt{|v|} \, dt = s(t) \quad \Longrightarrow \quad
+	\begin{aligned}[t]
+		L &= \int_{0}^{1} \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 + \left(\frac{dz}{dt}\right)^2} \, dt \\
+		&= \int_{0}^{1} \sqrt{(1)^2 + (2t)^2 + \left( \frac{4}{3} \cdot \frac{3}{2} \cdot t^{1/2} \right)^2} \, dt \\
+		&= \int_{0}^{1} \sqrt{1 + 4t^4 + 4t} \, dt \\
+		&= \int_{0}^{1} (2t + 1) \, dt \\
+		&= 2
+	\end{aligned}
+	\]
+
+\end{document}

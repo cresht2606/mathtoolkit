@@ -1,0 +1,197 @@
+\documentclass[a4paper]{exam}
+\usepackage{amsmath, amssymb, siunitx, lastpage}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+%Page setup
+\usepackage[letterpaper, top = 1.0in, bottom = 1.0in, left = 1.0in, right = 1.0in, heightrounded]{geometry}
+
+%Question Format%
+\renewcommand{\questionlabel}{\textbf{Question \thequestion.}}
+
+%Interval Gaps Format%
+\newcommand{\myquad}[1][1]{\hspace*{#1em}\ignorespaces}
+
+
+%Header file%
+\pagestyle{headandfoot}
+\headrule
+\header{\textbf{Calculus I}}{\textbf{International University, Vietnam National University - HCMC}}{\textit{Page \thepage\ of \pageref{LastPage}}}
+
+%Sample Test File%
+
+\begin{document}
+	
+	%Centered Information Box%
+	\begin{center}
+		\fbox{\fbox{\parbox{5.5in}{\centering
+					\vspace{1mm}
+					HCMIU - Calculus I - Mid-term Test\\
+					\vspace{1mm}
+					Semester 2 - Year: 2021 $\backsim$  2022 - Duration : 90 minutes\\
+					\vspace{1mm}
+					Date Modified : Thursday, June $26^{\text{th}}$, 2025
+				}
+			}
+		}
+	\end{center}
+	
+	%Instructions%
+	\vspace*{1mm}
+	\textbf{INSTRUCTIONS:}
+	\begin{itemize}
+		\item Use of calculator is allowed. Each student is allowed one doubled-sized sheet of reference material (size A4 of similar). All other documents and electronic devices are forbidden
+		\item You must explain your answers in detail; no points will be given for the answer alone.
+		\item There are a total of 5 (five) questions. Each one carries 20 points
+	\end{itemize}
+	
+	%Questions%
+	\vspace*{1mm}
+	\begin{questions}
+		\question Test the series for convergence or divergence:
+		\begin{equation*}
+			\text{(a) } \sum_{n = 1}^{\infty} \frac{9^{n}}{n!n}
+			\myquad[4] 
+			\text{(b) } \sum_{n = 1}^{\infty} \left(\frac{n}{n + 1}\right)^{2n^{2}}
+		\end{equation*}
+		\question Use the sum of the first 10 terms to approximate the sum of the series. Estimate error (find the remainder):
+		\begin{equation*}
+			\sum_{n = 1}^{\infty} \frac{1}{4^{n} + 1}
+		\end{equation*}
+		\question Determine the radius of convergence of the following power series, then test the endpoints to determine the interval of convergence.
+		\begin{equation*}
+			\sum_{n = 0}^{\infty} \frac{(-2)^{n}(x + 3)^{n}}{3^{n + 1}}
+		\end{equation*}
+		\question Do the following requests:\\[1ex]
+		\noindent \text{(a)} Find both the parametric and the vector equations of the line through point $(1, -1, 0)$, that is parallel to the line $x = 3 + 4t, y = 5 - t, z = 7$. \\[1ex]
+		\noindent \text{(b)} Find the distance between the given point $Q(-2, 5, 9)$ and the line: $x = 5t + 7, y = 2 - t, z = 12t + 4$.
+		\question Do the following requests:\\[1ex]
+		\noindent \text{(a) } Find
+		$$ \lim_{t \to 0} \left(\frac{\sin(t)}{t}\mathbf{i} - \frac{e^{t} - t - 1}{t}\mathbf{j} + \frac{\cos(t) + \frac{t^{2}}{2} - 1}{t^{2}} \mathbf{k} \right) $$ \\[1ex]
+		\noindent \text{(b) } Investigate the limit
+		$$ \lim_{(x, y) \to (0, 0)} \frac{(x + y)^{2}}{x^{2} + y^{2}} $$
+	\end{questions}
+	\vspace*{2mm}
+	\begin{center}
+		\textit{\large{END}}
+	\end{center}
+	
+	\newpage
+	
+	\begin{center}
+		\textbf{SUGGESTED ANSWER}
+	\end{center}
+	
+	\noindent \textbf{Question 1.} Both of series (a) and (b) have unidentified limits, as evident by n factorials and nth power term. Ratio and root tests are considered of all seven commonly used series tests.
+	\begin{multline*}
+		\text{(a)} \quad \sum_{n = 1}^{\infty} \frac{9^{n}}{n!n} \Longrightarrow 
+		\lim_{n \to \infty} \left| \frac{a_{n + 1}}{a_{n}} \right| 
+		= \lim_{n \to \infty} \left| \frac{9^{n + 1}}{(n+1)! (n + 1)} 
+		\cdot \frac{n! n}{9^{n}} \right| \\
+		= \lim_{n \to \infty} \frac{9n}{(n + 1)^2} 
+		= 9 \cdot \lim_{n \to \infty} \frac{n}{n^2 + 2n + 1} 
+		= 0 < 1 \quad \text{(Converges)}
+	\end{multline*}
+	
+	\begin{multline*}
+		\text{(b) } \sum_{n = 1}^{\infty} \left(\frac{n}{n + 1}\right)^{2n^{2}} \Longrightarrow \lim_{n \to \infty} \sqrt[n]{\left| a_{n} \right|} = \lim_{n \to \infty} \sqrt[n]{\left| \frac{n}{n + 1} \right|^{2n}} = \lim_{n \to \infty} \left| \frac{n}{n + 1} \right|^{2n} = \lim_{n \to \infty} \left| \left( \frac{n}{n + 1} \right)^{2n} \right|
+	\end{multline*}
+	
+	\noindent Let $I = \lim_{n \to \infty} \left| \left( \frac{n}{n + 1} \right)^{2n} \right| \Longrightarrow \ln(I) = \left| \lim_{n \to \infty} 2n \ln\left( \frac{n}{n + 1} \right) \right| = \lim_{n \to \infty} \left|\frac{-2n^{2}(n + 1)}{n(n + 1)^{2}}\right| \left( = \frac{0}{0} \right) = 2$\\[0.5em]
+	
+	\noindent Cross-referencing the natural logarithm, we obtain the true limit: $\ln I = 2 \Longrightarrow I = e^{2} > 1 \Longrightarrow$ The series diverges \\[0.5em]
+	\noindent \textbf{Question 2.} Error estimation with integral test to 10th term
+	\begin{multline*}
+		\sum_{n = 1}^{\infty} \frac{1}{4^{n} + 1}, \quad 
+		a_{n} = \frac{1}{4^{n} + 1} \hspace{0.5em} \text{(D.C.T)}. \quad
+		\text{Since } \frac{1}{4^{n} + 1} < \frac{1}{4^{n}}, \\
+		\Longrightarrow T_{n} \leq \int_{x}^{\infty} \frac{1}{4^{x}} \, dx 
+		\Longrightarrow \lim_{t \to \infty} \int_{n}^{t} 4^{-x} \, dx 
+		= \lim_{t \to \infty} \left[ \frac{-4^{-x}}{\ln 4} \right]_{n}^{t} 
+		= \lim_{t \to \infty} \left( \frac{-4^{-t}}{\ln 4} + \frac{4^{-n}}{\ln 4} \right) 
+		= \frac{1}{4^{n} \ln 4}
+	\end{multline*}
+	\noindent Therefore, the remainder $R_{n}$ for the above series satisfies (n = 10)
+	$$ R_{n} \leq T_{n} \leq \frac{1}{4^{n} \ln 4} \Longrightarrow R_{10} \leq \frac{1}{4^{10} \ln 4} \approx 6.88 \cdot 10^{-7} \approx 0.000000688$$
+	\noindent The summation of the series $S_{10} = \frac{1}{4^{1} + 1} + \frac{1}{4^{2} + 1} ... \frac{1}{4^{10} + 1} \approx 0.2794$ comprises the error less than 0.000000688.\\[0.5em]
+	\noindent \textbf{Question 3.} In order to determine the remainder of the x's for which we will get convergence, any of series tests can be applied. Having said that, ratio test is the best method in this case as most power series comprise nth power term as well as n factorials. \\
+	
+	\noindent After the application of selected test, we arrive at the radius of convergence and the interval by taking out absolute notation, which are also known as endpoints. However, both of endpoints are not assured to be convergent, so for certainty we need to plug in each of them into the series and perform conventional approach likewise.	
+	\begin{align*}
+		\sum_{n = 0}^{\infty} \frac{(-2)^{n}(x + 3)^{n}}{3^{n + 1}}
+		&\Longrightarrow 
+		\lim_{n \to \infty} \left| \frac{a_{n + 1}}{a_{n}} \right| \\
+		&= \lim_{n \to \infty} \left| \frac{(-2)^{n + 1}(x + 3)^{n + 1}}{3^{n + 2}} \cdot \frac{3^{n + 1}}{(-2)^{n}(x + 3)^{n}} \right| \\
+		&= \lim_{n \to \infty} \frac{2}{3} \left| x + 3 \right| = \frac{2}{3} \left| x + 3 \right| < 1 \\
+		&\Longrightarrow \frac{-3}{2} < x + 3 < \frac{3}{2} \Longleftrightarrow \frac{-9}{2} < x < \frac{-3}{2}
+	\end{align*}
+	\textbf{Endpoints: }
+	
+	\begin{itemize}
+		\item x = $\frac{-9}{2} \Longrightarrow \sum_{n = 0}^{\infty} \frac{(-2^{n})(\frac{-3}{2})^{n}}{3^{n + 1}} = \frac{1}{3} \Longrightarrow$ The series converges
+		\item x = $\frac{-3}{2} \Longrightarrow \sum_{n = 0}^{\infty} \frac{(-2)^{n}(\frac{3}{2})^{n}}{n + 1} = \sum_{n = 0}^{\infty} \frac{(-1)^{n}}{3} \Longrightarrow$ A.S.T with $\lim_{n \to \infty} b_{n} = \frac{1}{3} \neq 0 \Longrightarrow$ The series diverges
+	\end{itemize}
+	
+	\vspace*{1mm}
+	
+	\noindent Hence, the interval of convergence for the series is $\left[-\frac{9}{2}, -\frac{3}{2}\right)$ \\[0.5ex]
+	
+	\noindent \textbf{Question 4.} \\[0.5em]
+	\noindent (a) Parametric equation of the line with P(1, -3, 4) and direction vector due to parallel property $\vec{v} = \left\langle 4, -1, 0 \right\rangle$
+	$$ \Longrightarrow L: \begin{cases}
+		x = 1 + 4t \\
+		y = -3 - t \\
+		z = 4
+	\end{cases} $$
+	\noindent Vector equation under the line segment form: $r = r_{0} + vt \Longrightarrow \vec{r}(t) = r_{0} + \vec{v}t = \left\langle 1, -3, 4 \right\rangle + \left\langle 4, -1, 0 \right\rangle t$ \\[0.5em]
+	
+	\noindent (b) There are various ways to find the distance of a point to a line in 3D, here we introduce methods of cross product between skew lines, plane construction and the dot product. \\
+	
+	\hspace*{2mm} \textbf{Method 1}: Using a perpendicular plane containing the point. \\[0.5em]
+	\noindent The plane (P) passes through initial point Q(-2, 5, 9) and aligns with the direction vector of a line $\vec{v} = \left\langle 5, -1, 12 \right\rangle$
+	$$\Longrightarrow (P) : 5(x + 2) - (y - 5) + 12(z - 9) = 0 \Longrightarrow 5x - y + 12z = 93$$
+	$$L: \begin{cases}
+		x = 5t + 7 \\
+		y = -t + 2 \\
+		z = 12t + 4
+	\end{cases} \cap (P) \Longrightarrow 5(5t + 7) - (-t + 2) + 12(12t + 4) = 93 \Longrightarrow t = \frac{6}{85} \Longrightarrow Q^{\prime}\left(\frac{125}{17}, \frac{419}{85}, \frac{-353}{85}\right)$$
+	$$\boxed{d = \| \sqrt{\left(\frac{159}{17}\right)^{2} + \left(\frac{261}{85}\right)^{2} + \left(\frac{353}{85}\right)^{2}} \| \approx 10.68}$$\\
+	
+	\hspace*{2mm} \textbf{Method 2}: Using the distance formula between skew lines, given initial vector QP and direction vector.\\[0.5em]
+	$$ \| \vec{v} \times \vec{QP} \| = \begin{vmatrix} 
+		\mathbf{i} & \mathbf{j} & \mathbf{k} \\ 
+		5 & -1 & 12 \\ 
+		9 & -3 & -5 
+	\end{vmatrix} = \left\langle 41, 133, -16 \right\rangle, \quad \frac{\| \vec{v} \times \vec{QP} \|}{\| \vec{v} \|} = \frac{\sqrt{41^{2} + 133^{2} + 6^{2}}}{\sqrt{5^{2} + 1 + 12^{2}}} \approx 10.68 $$
+	
+	\hspace*{2mm} \textbf{Method 3}: Using the dot product to find the perpendicular point, as the line intersect with vector $QQ^{\prime}$ and also orthogonal to each other.
+	\begin{align*}
+		Q^{\prime}(5t + 7,\, 2 - t,\, 12t + 4) 
+		&\Longrightarrow \vec{QQ^{\prime}} = \left\langle 5t + 9,\; -3 - t,\; 12t - 5 \right\rangle \\
+		&\Longrightarrow \vec{QQ^{\prime}} \cdot \vec{v} 
+		= 5(5t + 9) - (-3 - t) + 12(12t - 5) = 0 \\
+		&\Longrightarrow t = \frac{6}{85}
+	\end{align*}
+	$$\boxed{d = \| \sqrt{\left(\frac{159}{17}\right)^{2} + \left(\frac{261}{85}\right)^{2} + \left(\frac{353}{85}\right)^{2}} \| \approx 10.68}$$
+	\noindent \textbf{Question 5.} \\[0.5em] 
+	\noindent (a) The limit of a vector equation takes after the properties of single-variable limits, which can be done by performing on different components \\[0.5em]
+	$$ \lim_{t \to 0} \left(\frac{\sin(t)}{t}\mathbf{i} - \frac{e^{t} - t - 1}{t}\mathbf{j} + \frac{\cos(t) + \frac{t^{2}}{2}}{t^{2} - 1} \mathbf{k} \right) \Longrightarrow 
+	\begin{cases}
+		\lim_{t \to 0} \frac{\sin(t)}{t} \hspace*{0.5em} \left( \frac{0}{0} \right) \overset{\text{L'H}}{=} \lim_{t \to 0} \cos(t) = 1 \\
+		\lim_{t \to 0} \frac{e^{t} - t - 1}{t} \hspace*{0.5em} \left( \frac{0}{0} \right) \overset{\text{L'H}}{=} \lim_{t \to 0} e^{t} - 1 = 0 \\
+		\lim_{t \to 0} \frac{\cos(t) + \frac{t^{2}}{2}}{t^{2} - 1}{t^{2}} \hspace*{0.5em} \left( \frac{0}{0} \right) \\
+		\overset{\text{L'H}}{=} \lim_{t \to 0} \frac{-\sin(t) + t}{2t} \hspace*{0.5em} \left( \frac{0}{0} \right) \overset{\text{L'H}}{=} \lim_{t \to 0} \frac{-\cos(t) + 1}{2} = 0 \\
+	\end{cases} $$
+	
+	\noindent Hence the limit of vector function above is $\left\langle 1, 0, 0 \right\rangle$\\[0.5em]
+	\noindent (b) Check for path dependence on multi-variable function by working with the general path $y = mx$
+	$$\lim_{(x, y) \to (0, 0)} \frac{(x + y)^{2}}{x^{2} + y^{2}} \Longrightarrow \lim_{x \to 0} \frac{(x + mx)^{2}}{x^{2} + m^{2}x^{2}} = \left( \frac{1}{m} + 1 \right)^{2}$$
+	\noindent \textbf{Implication}: Each value of m causes the different limits of the function. In other words, among different lines contain different values. Hence, the limit does not exist.
+	
+	\vspace*{2mm}
+	\begin{center}
+		\textit{\large{END}}
+	\end{center}
+	
+\end{document}
